@@ -8,48 +8,37 @@ type vehicle interface {
 
 }
 
-
 type car struct {
-
 	model string
-	make  string
+	make string
 	typeVehicle string
-
 }
-
 
 type truck struct {
-
 	model string
-	make  string
+	make string
 	typeVehicle string
-
-
 }
-
 
 type bike struct {
-
 	model string
-	make  string
-
+	make string
 }
+
+
 // Values array for the feedback.json file
 type Values struct {
 	Models []Model `json:"values"`
-
 }
 
 // Model array for the feedback.json file
 type Model struct {
 	Name string `json:"model"`
 	Feedback []string `json:"feedback"`
-
 }
 
 type feedbackResult struct {
-
-	feedbackTotal int
+	feedbackTotal	int
 	feedbackPositive int
 	feedbackNegative int
 	feedbackNeutral int
@@ -58,6 +47,7 @@ type feedbackResult struct {
 var vehicleResult map[string]feedbackResult
 
 var inventory []vehicle
+
 
 
 type rating float32
@@ -84,6 +74,7 @@ func init() {
 		car{"CRV", "Honda", "SUV"},
 		car{"Camry", "Toyota", "Sedan"},
 		truck{"F-150", "Ford", "Truck"},
+		truck{"RAM1500", "Dodge", "Truck"}}
 
 	vehicleResult = make(map[string]feedbackResult)
 
@@ -92,24 +83,21 @@ func init() {
 func main() {
 
 	// Generate ratings for the different vehicles
-	
+
 	// Print ratings for the different vehicles
+
 }
 
 /*
 func readJSONFile() Values {
 	jsonFile, err := os.Open("feedback.json")
-
 	if err != nil {
 		log.Fatal("File not found")
 	}
-
 	defer jsonFile.Close()
-
 	byteValue, _ := ioutil.ReadAll(jsonFile)
 	var content Values
 	json.Unmarshal(byteValue, &content)
-
 	return content
 }
 */
