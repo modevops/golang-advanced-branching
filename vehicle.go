@@ -43,7 +43,7 @@ type Values struct {
 // Model array for the feedback.json file
 type Model struct {
 	Name string
-	Feedback []string `jsone:"feedback"`
+	Feedback []string `json:"feedback"`
 
 }
 
