@@ -87,7 +87,7 @@ func init() {
 func main() {
 
 	// Generate ratings for the different vehicles
-
+	generateRating()
 	// Print ratings for the different vehicles
 
 }
@@ -107,6 +107,8 @@ func readJSONFile() Values {
 
 
 func generateRating() {
+	f := readJSONFile()
+
 	for _,v:= range  f.Models {
 		var vehResult feedbackResult
 		var vehRating rating
@@ -131,9 +133,9 @@ func generateRating() {
 				switch {
 				case vehRating > 8.0:
 					vehResult.feedbackPositive++
-				case vehRating .= 4.0 && vehRating <= 8.0:
+				case vehRating >= 4.0 && vehRating <= 8.0:
 					vehResult.feedbackNeutral++
-				case vehRating , 4.0:
+				case vehRating < 4.0:
 					vehResult.feedbackNegative ++
 				}
 			}
